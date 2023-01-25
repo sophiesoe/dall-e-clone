@@ -20,12 +20,15 @@ function Home() {
   const fetchAllPosts = async () => {
     setIsLoading(true);
     try {
-      const res = await fetch("http://localhost:8080/api/v1/posts", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const res = await fetch(
+        "https://dall-e-clone-qlne.onrender.com/api/v1/posts",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       if (res.ok) {
         const result = await res.json();
         setAllPosts(result.data.reverse());
