@@ -11,7 +11,7 @@ const openai = new OpenAIApi(config);
 const router = express.Router();
 
 router.get("/", (req, res, next) => {
-  res.send("Welcome from dall-e");
+  res.status(200).json({ message: "Hello from DALL-E!" });
 });
 
 router.post("/", async (req, res, next) => {
